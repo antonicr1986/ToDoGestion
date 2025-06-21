@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditTask));
             buttonCancelar = new Button();
             buttonGuardar = new Button();
             checkBoxCompletada = new CheckBox();
@@ -104,6 +105,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 255, 192);
             ClientSize = new Size(514, 277);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonGuardar);
@@ -112,8 +114,9 @@
             Controls.Add(textBoxDescripcion);
             Controls.Add(textBoxTitulo);
             Controls.Add(labelTitulo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormEditTask";
-            Text = "FormEditTask";
+            Text = "Editar tarea";
             ResumeLayout(false);
             PerformLayout();
         }

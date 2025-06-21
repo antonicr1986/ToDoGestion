@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             dataGridViewTasks = new DataGridView();
             buttonAdd = new Button();
             buttonDelete = new Button();
@@ -77,11 +78,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(585, 237);
+            BackColor = SystemColors.GradientActiveCaption;
+            ClientSize = new Size(679, 237);
             Controls.Add(buttonEditTask);
             Controls.Add(buttonDelete);
             Controls.Add(buttonAdd);
             Controls.Add(dataGridViewTasks);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             Text = "Gestor de tareas";
             ((System.ComponentModel.ISupportInitialize)dataGridViewTasks).EndInit();

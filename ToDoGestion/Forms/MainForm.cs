@@ -26,6 +26,29 @@ namespace ToDoGestion
             using var db = new AppDbContext();
             var tareas = db.Tareas.ToList();
             dataGridViewTasks.DataSource = tareas;
+
+            // Ocultar la columna "Id"
+            if (dataGridViewTasks.Columns.Contains("Id"))
+            {
+                dataGridViewTasks.Columns["Id"].Visible = false;
+            }
+
+            // Ajuste automático de columnas y filas
+            dataGridViewTasks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            // Esperar a que se ajusten los tamaños y luego ajustar el ancho del DataGridView
+            dataGridViewTasks.Refresh();
+
+            int totalWidth = 0;
+            foreach (DataGridViewColumn col in dataGridViewTasks.Columns)
+            {
+                if (col.Visible)
+                    totalWidth += col.Width;
+            }
+
+            totalWidth += 4; // margen extra
+
+            dataGridViewTasks.Width = totalWidth;
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
