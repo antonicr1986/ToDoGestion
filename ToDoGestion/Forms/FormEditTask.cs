@@ -23,6 +23,7 @@ namespace ToDoGestion.Forms
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.MaximizeBox = false;
             _service = new TaskServices();
             _tarea = tarea;
 

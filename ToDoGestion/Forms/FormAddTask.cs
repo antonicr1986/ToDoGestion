@@ -21,6 +21,8 @@ namespace ToDoGestion.Forms
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             _service = new TaskServices();
         }
 

@@ -16,6 +16,8 @@ namespace ToDoGestion
         public MainForm()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.MinimumSize = new Size(650, 265);
             this.StartPosition = FormStartPosition.CenterScreen;
             _service = new TaskServices();
             LoadTasks();
@@ -35,9 +37,10 @@ namespace ToDoGestion
 
             // Ajuste automático de columnas y filas
             dataGridViewTasks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewTasks.Columns["Descripcion"].MinimumWidth = 320;
 
             // Esperar a que se ajusten los tamaños y luego ajustar el ancho del DataGridView
-            dataGridViewTasks.Refresh();
+            /*dataGridViewTasks.Refresh();
 
             int totalWidth = 0;
             foreach (DataGridViewColumn col in dataGridViewTasks.Columns)
@@ -48,7 +51,7 @@ namespace ToDoGestion
 
             totalWidth += 4; // margen extra
 
-            dataGridViewTasks.Width = totalWidth;
+            dataGridViewTasks.Width = totalWidth;*/
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)

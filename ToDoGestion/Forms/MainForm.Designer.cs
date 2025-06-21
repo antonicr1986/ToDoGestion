@@ -41,7 +41,7 @@
             dataGridViewTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewTasks.Location = new Point(12, 12);
             dataGridViewTasks.Name = "dataGridViewTasks";
-            dataGridViewTasks.Size = new Size(556, 150);
+            dataGridViewTasks.Size = new Size(614, 150);
             dataGridViewTasks.TabIndex = 0;
             // 
             // buttonAdd
@@ -79,7 +79,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(679, 237);
+            ClientSize = new Size(679, 226);
             Controls.Add(buttonEditTask);
             Controls.Add(buttonDelete);
             Controls.Add(buttonAdd);
