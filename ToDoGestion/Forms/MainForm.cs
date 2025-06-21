@@ -1,3 +1,4 @@
+using GestorDeTareas.Services;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -9,9 +10,14 @@ namespace ToDoGestion
 {
     public partial class MainForm : Form
     {
+
+        private TaskServices _service;
+
         public MainForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            _service = new TaskServices();
             LoadTasks();
         }
 
@@ -22,7 +28,7 @@ namespace ToDoGestion
             dataGridViewTasks.DataSource = tareas;
         }
 
-        private void BtnAdd_Click (object sender, EventArgs e)
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
             var form = new FormAddTask();
             form.ShowDialog();
@@ -47,6 +53,5 @@ namespace ToDoGestion
                 LoadTasks();
             }
         }
-
     }
 }

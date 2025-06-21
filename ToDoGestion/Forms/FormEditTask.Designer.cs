@@ -39,26 +39,28 @@
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(451, 339);
+            buttonCancelar.Location = new Point(376, 193);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(75, 23);
             buttonCancelar.TabIndex = 13;
             buttonCancelar.Text = "Cancelar";
             buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Click += btnCancelar_Click;
             // 
             // buttonGuardar
             // 
-            buttonGuardar.Location = new Point(272, 332);
+            buttonGuardar.Location = new Point(247, 193);
             buttonGuardar.Name = "buttonGuardar";
             buttonGuardar.Size = new Size(75, 23);
             buttonGuardar.TabIndex = 12;
             buttonGuardar.Text = "Guardar";
             buttonGuardar.UseVisualStyleBackColor = true;
+            buttonGuardar.Click += btnGuardar_Click;
             // 
             // checkBoxCompletada
             // 
             checkBoxCompletada.AutoSize = true;
-            checkBoxCompletada.Location = new Point(70, 187);
+            checkBoxCompletada.Location = new Point(60, 162);
             checkBoxCompletada.Name = "checkBoxCompletada";
             checkBoxCompletada.Size = new Size(101, 19);
             checkBoxCompletada.TabIndex = 11;
@@ -68,7 +70,7 @@
             // labelDescripcion
             // 
             labelDescripcion.AutoSize = true;
-            labelDescripcion.Location = new Point(67, 103);
+            labelDescripcion.Location = new Point(60, 100);
             labelDescripcion.Name = "labelDescripcion";
             labelDescripcion.Size = new Size(72, 15);
             labelDescripcion.TabIndex = 10;
@@ -76,17 +78,17 @@
             // 
             // textBoxDescripcion
             // 
-            textBoxDescripcion.Location = new Point(255, 97);
+            textBoxDescripcion.Location = new Point(247, 92);
             textBoxDescripcion.Multiline = true;
             textBoxDescripcion.Name = "textBoxDescripcion";
-            textBoxDescripcion.Size = new Size(100, 23);
+            textBoxDescripcion.Size = new Size(204, 23);
             textBoxDescripcion.TabIndex = 9;
             // 
             // textBoxTitulo
             // 
             textBoxTitulo.Location = new Point(250, 40);
             textBoxTitulo.Name = "textBoxTitulo";
-            textBoxTitulo.Size = new Size(100, 23);
+            textBoxTitulo.Size = new Size(201, 23);
             textBoxTitulo.TabIndex = 8;
             // 
             // labelTitulo
@@ -102,7 +104,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(514, 277);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonGuardar);
             Controls.Add(checkBoxCompletada);

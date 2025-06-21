@@ -31,45 +31,59 @@
             dataGridViewTasks = new DataGridView();
             buttonAdd = new Button();
             buttonDelete = new Button();
+            buttonEditTask = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTasks).BeginInit();
             SuspendLayout();
             // 
             // dataGridViewTasks
             // 
             dataGridViewTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewTasks.Location = new Point(211, 63);
+            dataGridViewTasks.Location = new Point(12, 12);
             dataGridViewTasks.Name = "dataGridViewTasks";
-            dataGridViewTasks.Size = new Size(240, 150);
+            dataGridViewTasks.Size = new Size(556, 150);
             dataGridViewTasks.TabIndex = 0;
             // 
             // buttonAdd
             // 
-            buttonAdd.Location = new Point(580, 244);
+            buttonAdd.Location = new Point(301, 192);
             buttonAdd.Name = "buttonAdd";
             buttonAdd.Size = new Size(75, 23);
             buttonAdd.TabIndex = 1;
             buttonAdd.Text = "Add Task";
             buttonAdd.UseVisualStyleBackColor = true;
+            buttonAdd.Click += BtnAdd_Click;
             // 
             // buttonDelete
             // 
-            buttonDelete.Location = new Point(596, 324);
+            buttonDelete.Location = new Point(493, 192);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(75, 23);
             buttonDelete.TabIndex = 2;
             buttonDelete.Text = "Delete Task";
             buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.Click += btnDelete_Click;
+            // 
+            // buttonEditTask
+            // 
+            buttonEditTask.Location = new Point(403, 192);
+            buttonEditTask.Name = "buttonEditTask";
+            buttonEditTask.Size = new Size(75, 23);
+            buttonEditTask.TabIndex = 3;
+            buttonEditTask.Text = "Edit Task";
+            buttonEditTask.UseVisualStyleBackColor = true;
+            buttonEditTask.Click += btnEditar_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(585, 237);
+            Controls.Add(buttonEditTask);
             Controls.Add(buttonDelete);
             Controls.Add(buttonAdd);
             Controls.Add(dataGridViewTasks);
             Name = "MainForm";
-            Text = "Form1";
+            Text = "Gestor de tareas";
             ((System.ComponentModel.ISupportInitialize)dataGridViewTasks).EndInit();
             ResumeLayout(false);
         }
@@ -79,5 +93,6 @@
         private DataGridView dataGridViewTasks;
         private Button buttonAdd;
         private Button buttonDelete;
+        private Button buttonEditTask;
     }
 }

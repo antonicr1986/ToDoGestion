@@ -20,6 +20,7 @@ namespace ToDoGestion.Forms
         public FormAddTask()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             _service = new TaskServices();
         }
 
@@ -33,6 +34,12 @@ namespace ToDoGestion.Forms
                 Completada = checkBoxCompletada.Checked
             };
             _service.AgregarTarea(nuevaTarea);
+            Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
     }

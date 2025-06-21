@@ -22,6 +22,7 @@ namespace ToDoGestion.Forms
         public FormEditTask(Tarea tarea)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             _service = new TaskServices();
             _tarea = tarea;
 
@@ -37,6 +38,12 @@ namespace ToDoGestion.Forms
             _tarea.Completada = checkBoxCompletada.Checked;
 
             _service.EditarTarea(_tarea);
+            Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
     }
