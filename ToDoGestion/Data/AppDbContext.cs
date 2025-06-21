@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using ToDoGestion.Models;
 
 namespace ToDoGestion.Data
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<Task> Tasks { get; set; }
+        public DbSet<Tarea> Tareas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

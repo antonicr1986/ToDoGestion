@@ -1,8 +1,9 @@
-using ToDoGestion.Data;
-using ToDoGestion.Models;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using ToDoGestion.Data;
+using ToDoGestion.Forms;
+using ToDoGestion.Models;
 
 namespace ToDoGestion
 {
@@ -17,28 +18,33 @@ namespace ToDoGestion
         private void LoadTasks()
         {
             using var db = new AppDbContext();
-            var tareas = db.Tasks.ToList();
+            var tareas = db.Tareas.ToList();
             dataGridViewTasks.DataSource = tareas;
         }
 
         private void BtnAdd_Click (object sender, EventArgs e)
         {
-            //Open Form for Add Task
+            var form = new FormAddTask();
+            form.ShowDialog();
+            LoadTasks();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewTasks.CurrentRow?.DataBoundItem is Tarea tarea)
+            {
+                var form = new FormEditTask(tarea);
+                form.ShowDialog();
+                LoadTasks();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (dataGridViewTasks.CurrentRow != null)
-            {          
-                int id = (int)dataGridViewTasks.CurrentRow.Cells["Id"].Value;
-                using var db = new AppDbContext();
-                var tarea = db.Tasks.Find(id);
-                if (tarea != null)
-                {
-                    db.Tasks.Remove(tarea);
-                    db.SaveChanges();
-                    LoadTasks();
-                }
+            if (dataGridViewTasks.CurrentRow?.DataBoundItem is Tarea tarea)
+            {
+                _service.EliminarTarea(tarea.Id);
+                LoadTasks();
             }
         }
 
